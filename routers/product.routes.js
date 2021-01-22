@@ -6,7 +6,7 @@ const Product = require('../model/product.model')
 
 router.get('/', async (req, res) => {
     try {
-        const products = await Product.find().populate('images')
+        const products = await Product.find()
 
         return res.json({
             message: "Products retrieved successfully",

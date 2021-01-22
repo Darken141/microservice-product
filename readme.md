@@ -5,8 +5,8 @@ set-up in ```../docker-compose.yml```
 ```yml
   product-service:
     restart: always
-    build: ./product-service
-    command: npm run develop
+    image: darken141/microservice-products
+    command: npm run start
     environment:
       - MONGO_URI=mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017/${MONGO_INITDB_DATABASE}
     ports: 

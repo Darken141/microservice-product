@@ -11,18 +11,6 @@ const db = mongoose.connection
 db.on('error', (error) => console.log(error))
 db.on('open', () => console.log("Connected to Databse"))
 
-db.on('open', function () {
-    db.db.listCollections().toArray(function (err, names) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(names);
-      }
-
-      mongoose.db.close();
-    });
-});
-
 const PORT  = process.env.PORT || 3000
 
 app.use(cors())
